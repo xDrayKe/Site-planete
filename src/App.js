@@ -15,7 +15,6 @@ function Scene() {
   const Jupiter = new PlaneteModel("Jupiter", 12, [130, 0, 0], "textures/jupiter.jpg", "Jupiter", 130);
   const Saturne = new PlaneteModel("Saturne", 11, [160, 0, 0], "textures/saturne.jpg", "Saturne", 160);
   const Uranus = new PlaneteModel("Uranus", 10, [180, 0, 0], "textures/uranus.jpg", "Uranus", 180);
-  //Lune
 
   const planeteList = [Mercure, Venus, Terre, Mars, Jupiter, Saturne, Uranus];
 
@@ -47,9 +46,7 @@ function Scene() {
 
 function App() {
   return (
-    <div className="App">
-      <Scene />
-    </div>
+    <Scene />
   );
 }
 
