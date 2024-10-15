@@ -2,8 +2,8 @@
 
 Aujourd'hui le but de ce projet est de faire un portfolio avec le systême spatiale de notre galaxie !
 
-Tout d'abord pour cela j'ai commencé à apprendre le react avec un portolio classique (pas sur github)
-Ensuite j'ai commencé à jouer avec Three.js car je voulais faire de la 3d depuis un p'tit moment et me je suis dis que c'était le bon moment, et comme j'avais pas d'idées de portfolio original alors je me suis dis que ça pourrait être sympa 
+Tout d'abord pour cela j'ai commencé à apprendre le react avec un portolio classique (Le reportoire s'appelle "Reactttt")
+Ensuite j'ai commencé à jouer avec Three.js car je voulais faire de la 3d (Le reportoire s'appelle "test Planete") depuis un p'tit moment et me je suis dis que c'était le bon moment, et comme j'avais pas d'idées de portfolio original alors je me suis dis que ça pourrait être sympa 
 
 Liste des choses à faire : 
 - Metter tous les planêtes / FAIT (Sauf soleil)
