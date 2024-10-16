@@ -1,32 +1,27 @@
-import { useLoader, useFrame } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useRef } from 'react';
 
 function Planete({ nom, taille, texture, rayon, vitesse }) {
-    const textureMap = useLoader(THREE.TextureLoader, texture);
+    const meshRef = useRef(); // Référence à la planète pour pouvoir la manipuler
 
-    // Utiliser useRef pour garder une référence à la planète
-    const planetRef = useRef();
+    // Variable pour garder trace de l'angle de la planète
+    const angleRef = useRef(Math.random() * Math.PI * 2); // Angle initial aléatoire
 
-    // Utiliser useFrame pour animer la planète
-    useFrame(({ clock }) => {
-        const elapsedTime = clock.getElapsedTime();
-        const angle = elapsedTime * vitesse;
+    useFrame(() => {
+        angleRef.current += vitesse;
 
-        // Calcul de la position circulaire autour du soleil
-        const x = rayon * Math.cos(angle);
-        const z = rayon * Math.sin(angle);
+        const x = rayon * Math.cos(angleRef.current);
+        const z = rayon * Math.sin(angleRef.current);
 
-        // Mise à jour de la position de la planète
-        if (planetRef.current) {
-            planetRef.current.position.set(x, 0, z);
-        }
+        meshRef.current.position.set(x, 0, z);
+
     });
 
     return (
-        <mesh ref={planetRef}>
+        <mesh ref={meshRef} position={[rayon, 0, 0]}>
             <sphereGeometry args={[taille, 32, 32]} />
-            <meshStandardMaterial map={textureMap} />
+            <meshStandardMaterial map={new THREE.TextureLoader().load(texture)} />
         </mesh>
     );
 }
