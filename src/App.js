@@ -1,6 +1,6 @@
 import './App.css';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Stars } from '@react-three/drei';
 import Planete from './components/Planete';
 import { PlaneteModel } from './components/PlaneteModel';
 import * as THREE from 'three';
@@ -45,6 +45,7 @@ function Scene() {
 
   return (
     <Canvas camera={{ position: [-30, 120, 300], fov: 60 }}>
+      <Stars radius={200} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
       <ambientLight intensity={0.5} />
       <OrbitControls enableRotate={true} enablePan={false} enableZoom={true} />
 
